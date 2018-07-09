@@ -17,33 +17,42 @@ The SDKs offer a richer set of features and improved development patterns. We ha
 
 Each gateway class folder has the gateway class file and code samples for various supported API methods. Some API methods are not available on the gateway classes and we advice you move to the SDKs for the full set of features.
 
-- Gateway class file
-    - SMS
-        - Sedning a message
-        - Sending messages using a sender id or shortcode parameter
-        - Enqueue messages
-        - Sending premium rated (subscription) messages
-        - Sending premium rated (onDemand) messages
-    - Voice
-        - Making an outgoing call
-        - Handling an incoming call
-        - Fetching number of queued calls
-        - Uploading a media file
-    - USSD
-        - Processing USSD sessions
-    - Airtime
-        - Sending Airtime
-    - Payments
-        - Initiating a mobile checkout
-        - Making a mobile B2C payment
-        - Making a mobile B2B payment
-        - Initiating a Bank account checkout
-        - Making a Bank checkout Validation
-        - Making a Bank Transfer
-        - Initiating a Card checkout
-        - Making a card checkout validation
-    - User Data
-        - Fetching user balance
+```
+gateway/
+    |-- class_file
+    |-- samples/
+        |-- SMS/
+            - Sedning a message
+            - Sending messages using a sender id or shortcode parameter
+            - Enqueue messages
+            - Sending premium rated (subscription) messages
+            - Sending premium rated (onDemand) messages
+
+        |-- Voice/
+            - Making an outgoing call
+            - Handling an incoming call
+            - Fetching number of queued calls
+            - Uploading a media file
+
+        |-- USSD/
+            - Processing USSD sessions
+
+        |-- Airtime/
+            - Sending Airtime
+
+        |-- Payments/
+            - Initiating a mobile checkout
+            - Making a mobile B2C payment
+            - Making a mobile B2B payment
+            - Initiating a Bank account checkout
+            - Making a Bank checkout Validation
+            - Making a Bank Transfer
+            - Initiating a Card checkout
+            - Making a card checkout validation
+
+        |-- User Data/
+            - Fetching user balance
+```
 
 ## Usage
 
