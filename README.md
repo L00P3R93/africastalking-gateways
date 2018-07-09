@@ -2,8 +2,7 @@
 
 A collection of Africa's Talking Gateway classes to help with developing on our APIs.
 
-**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks).
-The SDKs offer a richer set of features and improved development patterns. We have put together [a transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs and to better demonstrate the improved development patterns.**
+**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read the [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs and for a demonstration of the improved development patterns.**
 
 ## Official SDKs
 1. [Java](https://github.com/AfricasTalkingLtd/africastalking-java)
@@ -15,7 +14,7 @@ The SDKs offer a richer set of features and improved development patterns. We ha
 
 ## Project Structure
 
-Each gateway class folder has the gateway class file and code samples for various supported API methods. Some API methods are not available on the gateway classes and we advice you move to the SDKs for the full set of features.
+Each gateway class folder has the gateway class file and code samples for various supported API methods. Some API methods are not available in the gateway classes and we advice you move to the SDKs for the full set of features.
 
 ```
 gateway/
