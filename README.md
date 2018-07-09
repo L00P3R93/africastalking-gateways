@@ -5,12 +5,12 @@ A collection of Africa's Talking Gateway classes to help with developing on our 
 **Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read the [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs and for a demonstration of the improved development patterns.**
 
 ## Official SDKs
-1. [Java](https://github.com/AfricasTalkingLtd/africastalking-java)
-2. [Nodejs](https://github.com/AfricasTalkingLtd/africastalking-node.js)
-3. [PHP](https://github.com/AfricasTalkingLtd/africastalking-php)
-4. [Python](https://github.com/AfricasTalkingLtd/africastalking-python)
-5. [Ruby](https://github.com/AfricasTalkingLtd/africastalking-ruby)
-6. [.Net](https://github.com/AfricasTalkingLtd/africastalking.Net)
+1. [Csharp](https://github.com/AfricasTalkingLtd/africastalking.Net)
+2. [Java](https://github.com/AfricasTalkingLtd/africastalking-java)
+3. [Nodejs](https://github.com/AfricasTalkingLtd/africastalking-node.js)
+4. [PHP](https://github.com/AfricasTalkingLtd/africastalking-php)
+5. [Python](https://github.com/AfricasTalkingLtd/africastalking-python)
+6. [Ruby](https://github.com/AfricasTalkingLtd/africastalking-ruby)
 
 ## Project Structure
 
