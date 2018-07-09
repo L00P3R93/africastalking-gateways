@@ -5,7 +5,7 @@ A collection of Africa's Talking Gateway classes to help with developing on our 
 **Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read the [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs and for a demonstration of the improved development patterns.**
 
 ## Official SDKs
-1. [Csharp](https://github.com/AfricasTalkingLtd/africastalking.Net)
+1. [C#](https://github.com/AfricasTalkingLtd/africastalking.Net)
 2. [Java](https://github.com/AfricasTalkingLtd/africastalking-java)
 3. [Nodejs](https://github.com/AfricasTalkingLtd/africastalking-node.js)
 4. [PHP](https://github.com/AfricasTalkingLtd/africastalking-php)
@@ -20,26 +20,26 @@ Each gateway class folder has the gateway class file and code samples for variou
 gateway/
     |-- class_file
     |-- samples/
-        |-- SMS/
+        |-- sms/
             - Sedning a message
             - Sending messages using a sender id or shortcode parameter
             - Enqueue messages
             - Sending premium rated (subscription) messages
             - Sending premium rated (onDemand) messages
 
-        |-- Voice/
+        |-- voice/
             - Making an outgoing call
             - Handling an incoming call
             - Fetching number of queued calls
             - Uploading a media file
 
-        |-- USSD/
+        |-- ussd/
             - Processing USSD sessions
 
-        |-- Airtime/
+        |-- airtime/
             - Sending Airtime
 
-        |-- Payments/
+        |-- payments/
             - Initiating a mobile checkout
             - Making a mobile B2C payment
             - Making a mobile B2B payment
@@ -49,7 +49,7 @@ gateway/
             - Initiating a Card checkout
             - Making a card checkout validation
 
-        |-- User Data/
+        |-- userData/
             - Fetching user balance
 ```
 
