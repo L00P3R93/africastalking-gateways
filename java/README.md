@@ -11,7 +11,7 @@ Please do not panic! Our certificate is [perfectly valid](http://www.sslshopper.
 
 Here is how to fix the issue:
 
-- Download and compile InstallCert.java (you can find the code here).
+- Download and compile InstallCert.java (you can find the code under `utils/InstallCert.java`).
 
 - On the CMD prompt(Windows) or Terminal(*nix), run: `java InstallCert api.africastalking.com`
 
