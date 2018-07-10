@@ -5,7 +5,7 @@ public class Payments {
 
     /* Set your credentials */
     static final String APP_USERNAME = "sandbox"; // Your app username, or "sandbox" if you are testing in sandbox
-    static final String API_KEY = "32ae08f93abf6890029cdcb0d482920a9921ffabec95eba5221d43afe688851e"; // Your app or sandox api key
+    static final String API_KEY = ""; // Your app or sandox api key
 
     /*************************************************************************************
         NOTE: If connecting to the sandbox:
