@@ -36,7 +36,7 @@ public class AfricasTalkingGateway
     {
 	_username    = username_;
 	_apiKey      = apiKey_;
-	_environment = "production";
+	_environment = username_.contentEquals("sandbox") ? "sandbox" : "production";
     }
     
     public AfricasTalkingGateway(String username_, String apiKey_, String environment_)
@@ -286,7 +286,7 @@ public class AfricasTalkingGateway
 	    .put("phoneNumber", phoneNumber_)
 	    .put("currencyCode", currencyCode_)
 	    .put("amount", amount_)
-	    .put("metadata", metadata_);
+		.put("metadata", metadata_);
 	String response = sendJsonPOSTRequest(requestBody.toString(), getMobilePaymentCheckoutUrl());
 	return new JSONObject(response);
     }
@@ -346,13 +346,12 @@ public class AfricasTalkingGateway
     }
     
     private JSONArray sendMessageImpl(String to_, String message_, HashMap<String, String> data_) throws Exception {
-    	String response = sendPOSTRequest(data_, getSmsUrl());
+		String response = sendPOSTRequest(data_, getSmsUrl());
     	if (responseCode == HTTP_CODE_CREATED) {
-	    JSONObject jsObject   = new JSONObject(response);
-	    JSONArray  recipients = jsObject.getJSONObject("SMSMessageData").getJSONArray("Recipients");
-	    if(recipients.length() > 0) return recipients;
-	    
-	    throw new Exception(jsObject.getJSONObject("SMSMessageData").getString("Message"));
+			JSONObject jsObject   = new JSONObject(response);
+			JSONArray  recipients = jsObject.getJSONObject("SMSMessageData").getJSONArray("Recipients");
+			if(recipients.length() > 0) return recipients;
+	    	throw new Exception(jsObject.getJSONObject("SMSMessageData").getString("Message"));
     	}
     	
     	throw new Exception(response);
