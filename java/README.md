@@ -18,19 +18,3 @@ Here is how to fix the issue:
 This will download a copy of our Certificate and create a file named `jssecacerts` in the current directory.
 
 - You can now add our Certificate to your trusted store by copying the created `jssecacerts` file to the Java security directory under `$JAVA_HOME/jre/lib/security`
-
-
-#### Usage
-
-```sh
-# For example, to build the SMS sample, run the following commands:
-
-# 1. Compile the sample code
-$ javac -cp lib/json.jar AfricasTalkingGateway.java samples/SMS.java -d out
-
-# 2. Go to output folder
-$ cd out
-
-# 3. Run the compiled code
-$ java -cp ../lib/json.jar: SMS
-```

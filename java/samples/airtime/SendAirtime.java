@@ -1,20 +1,21 @@
 import org.json.*;
 import java.util.HashMap;
 
-public class Airtime {
+public class SendAirtime {
 
-    /* Set your credentials */
-    static final String APP_USERNAME = "sandbox"; // Your app username, or "sandbox" if you are testing in sandbox
-    static final String API_KEY = ""; // Your app or sandox api key
+    public static void main(String[] args) {
 
-    /*************************************************************************************
-        NOTE: If connecting to the sandbox:
-        1. Use "sandbox" as the app username
-        2. Use the apiKey generated from your sandbox application
-            https://account.africastalking.com/apps/sandbox/settings/key
-    **************************************************************************************/
+        /* Set your credentials */
+        String APP_USERNAME = "sandbox"; // Your app username, or "sandbox" if you are testing in sandbox
+        String API_KEY = ""; // Your app or sandox api key
 
-    public static void send() {
+        /*************************************************************************************
+            NOTE: If connecting to the sandbox:
+            1. Use "sandbox" as the app username
+            2. Use the apiKey generated from your sandbox application
+                https://account.africastalking.com/apps/sandbox/settings/key
+        **************************************************************************************/
+
         /* Create a gateway object */
         AfricasTalkingGateway gateway = new AfricasTalkingGateway(APP_USERNAME, API_KEY);
 
@@ -44,9 +45,5 @@ public class Airtime {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) {
-        send();
     }
 }

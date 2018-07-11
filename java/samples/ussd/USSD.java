@@ -3,9 +3,12 @@ import java.util.HashMap;
 
 public class USSD {
 
-    public static void handleUSSD() {
+
+    public static void main(String[] args) {
         /*
-            When AT POSTs to your callback, respond with text/plain starting with
+            Start a web server
+
+            When Africasalking POSTs to your server, respond with text/plain starting with
             either CON or END.
             USSD is session driven. Every request we send you will contain a sessionId,
             and this will be maintained until that session is completed
@@ -16,10 +19,5 @@ public class USSD {
             e.g. 
             CON What would you like to do?\n1. Check My Account\n2. Quit
         */
-    }
-
-
-    public static void main(String[] args) {
-        handleUSSD();
     }
 }
