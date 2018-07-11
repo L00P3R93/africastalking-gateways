@@ -36,4 +36,4 @@ class AIRTIME:
 
 
 if __name__ == '__main__':
-    AIRTIME().send();
+    AIRTIME().send()

@@ -5,7 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 # Import the helper gateway class
 from AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 
-class SMS:
+class PAYMENTS:
     def __init__(self):
         self.APP_USERNAME = "sandbox" # Your app username, or "sandbox" if you are testing in sandbox
         self.API_KEY = ""; # Your app or sandbox api key
@@ -20,31 +20,31 @@ class SMS:
         #  gateway = AfricasTalkingGateway(username, apiKey, "sandbox");
         #**************************************************************************************
 
-    def fetch_subscriptions(self):
+    def checkout(self):
         gateway = AfricasTalkingGateway(self.APP_USERNAME, self.API_KEY)
+
+        # Specify the name of your Africa's Talking payment product
+        productName = "ABC"
+        # The phone number of the customer checking out
+        phoneNumber = "+25471XXXXXX"
+        # The 3-Letter ISO currency code for the checkout amount
+        currencyCode = "KES"
+        # The checkout amount
+        amount = 100.50
+        # Any metadata that you would like to send along with this request
+        # This metadata will be  included when we send back the final payment notification
+        metadata = {"agentId" : "654", "productId" : "321"}
+        # The provider channel the payment will be initiated from e.g a paybill number
+        providerChannel = None
+
         try:
-            # Our gateway will return 100 numbers at a time back to you, starting with
-            # what you currently believe is the lastReceivedId. Specify 0 for the first
-            # time you access the gateway, and the ID of the last message we sent you
-            # on subsequent results
-            # Specify your Africa's Talking short code and keyword
-            shortCode = "MyAppShortCode";
-            keyword   = "MyAppKeyword";
-            
-            lastReceivedId = 0;
-
-            while True:
-                subcriptions = gateway.fetchPremiumSubscriptions(shortCode, keyword, lastReceivedId)
-                if len(subcriptions) == 0:
-                    print 'No subscription numbers.'
-                    break
-                for subscription in subscriptions:
-                    print 'phone number : %s;' % subscription['phoneNumber']
-                    lastReceivedId = subscription['id']
-
-        except AfricasTalkingGatewayException as e:
-            print 'Encountered an error while fetching numbers: %s' % str(e)
+            # Initiate the checkout. If successful, you will get back a transactionId
+            transactionId = gateway.initiateMobilePaymentCheckout(
+                productName, phoneNumber, currencyCode, amount, metadata, providerChannel)
+            print "The transactionId is " + transactionId
+        except AfricasTalkingGatewayException, e:
+            print 'Received error response: %s' % str(e)
 
 
 if __name__ == '__main__':
-    SMS().fetch_subscriptions()
+    PAYMENTS().checkout()

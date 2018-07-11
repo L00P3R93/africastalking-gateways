@@ -41,4 +41,4 @@ class VOICE:
 
 
 if __name__ == '__main__':
-    VOICE().call();
+    VOICE().call()

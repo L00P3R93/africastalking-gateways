@@ -44,4 +44,4 @@ class SMS:
 
 
 if __name__ == '__main__':
-    SMS().fetch_sms();
+    SMS().fetch_sms()

@@ -45,4 +45,4 @@ class SMS:
 
 
 if __name__ == '__main__':
-    SMS().create_subscription();
+    SMS().create_subscription()

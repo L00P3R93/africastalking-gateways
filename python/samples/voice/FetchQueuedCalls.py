@@ -41,4 +41,4 @@ class VOICE:
             print 'Encountered an error while getting queued calls: %s' % str(e)
 
 if __name__ == '__main__':
-    VOICE().fetch_queued_calls();
+    VOICE().fetch_queued_calls()

@@ -34,4 +34,4 @@ class VOICE:
             print 'Encountered an error while uploading the file: %s' % str(e)
 
 if __name__ == '__main__':
-    VOICE().upload_media_file();
+    VOICE().upload_media_file()
