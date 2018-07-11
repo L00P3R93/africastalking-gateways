@@ -20,28 +20,31 @@ class SMS:
         #  gateway = AfricasTalkingGateway(username, apiKey, "sandbox");
         #**************************************************************************************
 
-    def fetch_sms(self):
+    def fetch_subscriptions(self):
         gateway = AfricasTalkingGateway(self.APP_USERNAME, self.API_KEY)
         try:
-            # Our gateway will return 10 messages at a time back to you, starting with
+            # Our gateway will return 100 numbers at a time back to you, starting with
             # what you currently believe is the lastReceivedId. Specify 0 for the first
             # time you access the gateway, and the ID of the last message we sent you
             # on subsequent results
+            # Specify your Africa's Talking short code and keyword
+            shortCode = "MyAppShortCode";
+            keyword   = "MyAppKeyword";
+            
             lastReceivedId = 0;
 
             while True:
-                messages = gateway.fetchMessages(lastReceivedId)
-                if len(messages) == 0:
-                    print 'No sms messages in your inbox.'
+                subcriptions = gateway.fetchPremiumSubscriptions(shortCode, keyword, lastReceivedId)
+                if len(subcriptions) == 0:
+                    print 'No subscription numbers.'
                     break
-                for message in messages:
-                    print 'from = %s; to = %s; date = %s; text = %s; linkId = %s;' % (
-                        message['from'], message['to'], message['date'], message['text'], message['linKId'])
-                    lastReceivedId = message['id']
+                for subscription in subscriptions:
+                    print 'phone number : %s;' % subscription['phoneNumber']
+                    lastReceivedId = subscription['id']
 
         except AfricasTalkingGatewayException as e:
-            print 'Encountered an error while fetching messages: %s' % str(e)
+            print 'Encountered an error while fetching numbers: %s' % str(e)
 
 
 if __name__ == '__main__':
-    SMS().fetch_sms();
+    SMS().fetch_subscriptions();
