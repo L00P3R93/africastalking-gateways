@@ -2,7 +2,7 @@
 
 A collection of Africa's Talking Gateway classes to help with developing on our APIs.
 
-**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read the [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs and for a demonstration of the improved development patterns.**
+**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read this [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs.**
 
 ## Official SDKs
 1. [C#](https://github.com/AfricasTalkingLtd/africastalking.Net)
@@ -21,11 +21,14 @@ gateway/
     |-- class_file
     |-- samples/
         |-- sms/
-            - Sedning a message
-            - Sending messages using a sender id or shortcode parameter
-            - Enqueue messages
-            - Sending premium rated (subscription) messages
-            - Sending premium rated (onDemand) messages
+            - Sending a message
+            - Sending a message using a sender id
+            - Enqueuing messages
+            - Fetching (inbox) messages
+            - Creating a premium sms subscription
+            - Fetching premium sms subscriptions
+            - Sending a premium rated (subscription) message
+            - Sending a premium rated (onDemand) message
 
         |-- voice/
             - Making an outgoing call
