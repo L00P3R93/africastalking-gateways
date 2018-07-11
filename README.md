@@ -21,11 +21,14 @@ gateway/
     |-- class_file
     |-- samples/
         |-- sms/
-            - Sedning a message
-            - Sending messages using a sender id or shortcode parameter
-            - Enqueue messages
-            - Sending premium rated (subscription) messages
-            - Sending premium rated (onDemand) messages
+            - Sending a message
+            - Sending a message using a sender id
+            - Enqueuing messages
+            - Fetching (inbox) messages
+            - Creating a premium sms subscription
+            - Fetching premium sms subscriptions
+            - Sending a premium rated (subscription) message
+            - Sending a premium rated (onDemand) message
 
         |-- voice/
             - Making an outgoing call
