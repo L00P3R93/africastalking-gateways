@@ -2,8 +2,8 @@
 // Be sure to include the file you've just downloaded
 require_once('AfricasTalkingGateway.php');
 // Specify your authentication credentials
-$username   = "sandbox";
-$apikey     = "381b193ffb3f8cc334dd938b49f136d6702efdb6a9d21ce7510cc469612ae02e";
+$username   = "MyAppUsername";
+$apikey     = "MyAppAPIKey";
 // Specify the numbers that you want to send to in a comma-separated list
 // Please ensure you include the country code (+254 for Kenya in this case)
 $recipients = "+254734777111,+254734777111";
