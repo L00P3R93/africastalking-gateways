@@ -1,7 +1,7 @@
 import org.json.*;
 import java.util.HashMap;
 
-public class FetchMessages {
+public class FetchSubscriptions {
 
     public static void main(String[] args) {
 
@@ -19,6 +19,10 @@ public class FetchMessages {
         /* Create a gateway object */
         AfricasTalkingGateway gateway = new AfricasTalkingGateway(APP_USERNAME, API_KEY);
 
+        // Specify your premium shortcode and keyword
+        String shortCode = "XXXXX";
+        String keyword   = "myPremiumKeyword";
+
         // Our gateway will return 10 messages at a time back to you, starting with
         // what you currently believe is the lastReceivedId. Specify 0 for the first
         // time you access the gateway, and the ID of the last message we sent you
@@ -30,14 +34,10 @@ public class FetchMessages {
         try {
             JSONArray results = null;
             do {
-                results = gateway.fetchMessages(lastReceivedId);
+                results = gateway.fetchPremiumSubscriptions(shortCode, keyword, lastReceivedId);
                 for(int i = 0; i < results.length(); ++ i) {
                     JSONObject result = results.getJSONObject(i);
-                    System.out.println("From: " + result.getString("from"));
-                    System.out.println("To: " + result.getString("to"));
-                    System.out.println("Message: " + result.getString("text"));
-                    System.out.println("Date: " + result.getString("date"));
-                    System.out.println("linkId: " + result.getString("linkId"));
+                    System.out.println(result.getString("phoneNumber"));
                     lastReceivedId = result.getInt("id");
                 }
             } while ( results.length() > 0 );
