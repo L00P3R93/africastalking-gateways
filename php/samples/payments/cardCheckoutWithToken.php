@@ -1,8 +1,8 @@
 <?php
 require_once "AfricasTalkingGateway.php";
 //Specify your credentials
-$username = "MyAppUsername";
-$apiKey   = "MyAppApiKey";
+$username = "my-apps-username";
+$apiKey   = "my-apps-apikey";
 //Create an instance of our awesome gateway class and pass your credentials
 $gateway = new AfricasTalkingGateway($username, $apiKey);
 /*************************************************************************************
@@ -16,7 +16,7 @@ $gateway  = new AfricasTalkingGateway($username, $apiKey, "sandbox");
 // Specify the name of your Africa's Talking payment product
 $productName  = "Airtime Distribution";
 // Specify a checkout token that you have previously received
-$checkoutToken = "ATCdTkn_869e7b6126f0deb4b31eebe039a2e5f2d99be";
+$checkoutToken = "ATCdTkn_f6ee319bc9c9b5c8e468dfbe3d903094";
 // The 3-Letter ISO currency code for the checkout amount
 $currencyCode = "NGN";
 // The checkout amount

@@ -14,7 +14,7 @@ $gateway = new AfricasTalkingGateway($username, $apiKey);
 $gateway  = new AfricasTalkingGateway($username, $apiKey, "sandbox");
 **************************************************************************************/
 // Provide the transactionId that was returned by the charge request
-$transactionId = "ATPid_e092c250f2bd1bcd6938b05633ba1c13";
+$transactionId = "ATPid_4a55215cba7dc3f6605574813834dee8";
 // Provide the OTP that the bank sent to the owner of the bank account
 $otp           = "1234";
 try {

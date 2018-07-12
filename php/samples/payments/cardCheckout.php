@@ -1,10 +1,8 @@
 <?php
 require_once "AfricasTalkingGateway.php";
 //Specify your credentials
-//$username = "my-apps-username";
-//$apikey   = "my-apps-apikey";
-$username   = "sandbox";
-$apiKey     = "381b193ffb3f8cc334dd938b49f136d6702efdb6a9d21ce7510cc469612ae02e";
+$username = "my-apps-username";
+$apiKey   = "my-apps-apikey";
 //Create an instance of our awesome gateway class and pass your credentials
 $gateway = new AfricasTalkingGateway($username, $apiKey);
 /*************************************************************************************
