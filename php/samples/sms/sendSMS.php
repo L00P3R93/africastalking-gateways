@@ -6,7 +6,7 @@ $username   = "MyAppUsername";
 $apikey     = "MyAppAPIKey";
 // Specify the numbers that you want to send to in a comma-separated list
 // Please ensure you include the country code (+254 for Kenya in this case)
-$recipients = "+254734777111,+254734777111";
+$recipients = "+25471XXXXXXX,+25473XXXXXXX";
 // And of course we want our recipients to know what we really do
 $message    = "I'm a lumberjack and its ok, I sleep all night and I work all day";
 // Create a new instance of our awesome gateway class
