@@ -125,26 +125,47 @@ public class AfricasTalkingGateway
     }
 
     
-    //Subcscription methods
-    public JSONObject createSubscription(String phoneNumber_, String shortCode_, String keyword_) throws Exception
+	//Subcscription methods
+	public JSONObject createCheckoutToken(String phoneNumber_) throws Exception {
+		if(phoneNumber_.length() == 0) {
+			throw new Exception("Please supply phoneNumber");
+		}
+			
+		HashMap <String, String> data_ = new HashMap<String, String>();
+		data_.put("username", _username);
+		data_.put("phoneNumber", phoneNumber_);
+		String requestUrl = getCheckoutTokenUrl() + "/create";
+			
+		String response = sendPOSTRequest(data_, requestUrl);
+			
+		if(responseCode != HTTP_CODE_CREATED)
+			throw new Exception(response.toString());
+			
+		JSONObject jsObject = new JSONObject(response);
+		return jsObject;
+	}
+	
+    public JSONObject createSubscription(String phoneNumber_, String shortCode_, String keyword_, String checkoutToken_) throws Exception
     {
-    	if(phoneNumber_.length() == 0 || shortCode_.length() == 0 || keyword_.length() == 0)
-	    throw new Exception("Please supply phoneNumber, shortCode and keyword");
-    	
-	HashMap <String, String> data_ = new HashMap<String, String>();
-	data_.put("username", _username);
-	data_.put("phoneNumber", phoneNumber_);
-	data_.put("shortCode", shortCode_);
-	data_.put("keyword", keyword_);
-	String requestUrl = getSubscriptionUrl() + "/create";
-		
-	String response = sendPOSTRequest(data_, requestUrl);
-		
-	if(responseCode != HTTP_CODE_CREATED)
-	    throw new Exception(response.toString());
-		
-	JSONObject jsObject = new JSONObject(response);
-	return jsObject;
+		if(phoneNumber_.length() == 0 || shortCode_.length() == 0 || keyword_.length() == 0 || checkoutToken_.length() == 0) {
+			throw new Exception("Please supply phoneNumber, shortCode, keyword and checkoutToken");
+		}
+			
+		HashMap <String, String> data_ = new HashMap<String, String>();
+		data_.put("username", _username);
+		data_.put("phoneNumber", phoneNumber_);
+		data_.put("shortCode", shortCode_);
+		data_.put("keyword", keyword_);
+		data_.put("checkoutToken", checkoutToken_);
+		String requestUrl = getSubscriptionUrl() + "/create";
+			
+		String response = sendPOSTRequest(data_, requestUrl);
+			
+		if(responseCode != HTTP_CODE_CREATED)
+			throw new Exception(response.toString());
+			
+		JSONObject jsObject = new JSONObject(response);
+		return jsObject;
     }
 
   
@@ -494,7 +515,11 @@ public class AfricasTalkingGateway
     
     private String getSubscriptionUrl() {
 	return getApiHost() + "/version1/subscription";
-    }
+	}
+	
+	private String getCheckoutTokenUrl() {
+		return getApiHost() + "/checkout/token";
+		}
     
     private String getUserDataUrl() {
 	return getApiHost() + "/version1/user";

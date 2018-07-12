@@ -1,7 +1,7 @@
 import org.json.*;
 import java.util.HashMap;
 
-public class SendEnqueued {
+public class FetchInbox {
 
     public static void main(String[] args) {
 
