@@ -20,28 +20,29 @@ class SMS:
         #  gateway = AfricasTalkingGateway(username, apiKey, "sandbox");
         #**************************************************************************************
 
-    def fetch_sms(self):
+    def create_subscription(self):
         gateway = AfricasTalkingGateway(self.APP_USERNAME, self.API_KEY)
+        # Specify the number that you want to subscribe
+        # Please ensure you include the country code (+254 for Kenya in this case)
+        phoneNumber   = "+254711XXXYYY";
+        # Specify your Africa's Talking short code and keyword
+        shortCode = "MyAppShortCode";
+        keyword   = "MyAppKeyword";
+        # create checkout token
         try:
-            # Our gateway will return 10 messages at a time back to you, starting with
-            # what you currently believe is the lastReceivedId. Specify 0 for the first
-            # time you access the gateway, and the ID of the last message we sent you
-            # on subsequent results
-            lastReceivedId = 0;
-
-            while True:
-                messages = gateway.fetchMessages(lastReceivedId)
-                if len(messages) == 0:
-                    print 'No sms messages in your inbox.'
-                    break
-                for message in messages:
-                    print 'from = %s; to = %s; date = %s; text = %s; linkId = %s;' % (
-                        message['from'], message['to'], message['date'], message['text'], message['linKId'])
-                    lastReceivedId = message['id']
+            checkoutToken = gateway.createCheckoutToken(phoneNumber)
+        except AfricasTalkingGatewayException as e:
+            print "Error generating checkout Token:%s" %str(e)
+            return
+        # create subscription
+        try:
+            response = gateway.createSubscription(phoneNumber, shortCode, keyword, checkoutToken)
+            # Only status Success signifies the subscription was successfully
+            print "Status: %s \n Description: %s" %(response['status'], response['description'])
 
         except AfricasTalkingGatewayException as e:
-            print 'Encountered an error while fetching messages: %s' % str(e)
+            print "Error creating subscription:%s" %str(e)
 
 
 if __name__ == '__main__':
-    SMS().fetch_sms()
+    SMS().create_subscription()

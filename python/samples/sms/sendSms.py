@@ -8,7 +8,7 @@ from AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayEx
 class SMS:
     def __init__(self):
         self.APP_USERNAME = "sandbox" # Your app username, or "sandbox" if you are testing in sandbox
-        self.API_KEY = "48ef2a552a6516b5e5e4e38419e9fb2166fe737ecb1b0ebc3759a8eae6c585e4"; # Your app or sandbox api key
+        self.API_KEY = ""; # Your app or sandbox api key
         #*************************************************************************************
         #  NOTE: If connecting to the sandbox:
         #
@@ -40,4 +40,4 @@ class SMS:
 
 
 if __name__ == '__main__':
-    SMS().send();
+    SMS().send()

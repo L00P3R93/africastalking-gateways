@@ -5,7 +5,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 # Import the helper gateway class
 from AfricasTalkingGateway import AfricasTalkingGateway, AfricasTalkingGatewayException
 
-class SMS:
+class VOICE:
     def __init__(self):
         self.APP_USERNAME = "sandbox" # Your app username, or "sandbox" if you are testing in sandbox
         self.API_KEY = ""; # Your app or sandbox api key
@@ -20,28 +20,25 @@ class SMS:
         #  gateway = AfricasTalkingGateway(username, apiKey, "sandbox");
         #**************************************************************************************
 
-    def fetch_sms(self):
+    def fetch_queued_calls(self):
         gateway = AfricasTalkingGateway(self.APP_USERNAME, self.API_KEY)
+
+        # Specify your Africa's Talking phone number in international format
+        phoneNumber = "+254711082XXX"
+
         try:
-            # Our gateway will return 10 messages at a time back to you, starting with
-            # what you currently believe is the lastReceivedId. Specify 0 for the first
-            # time you access the gateway, and the ID of the last message we sent you
-            # on subsequent results
-            lastReceivedId = 0;
+            # Get queued calls
+            queuedcalls = gateway.getNumQueuedCalls(phoneNumber)
 
-            while True:
-                messages = gateway.fetchMessages(lastReceivedId)
-                if len(messages) == 0:
-                    print 'No sms messages in your inbox.'
-                    break
-                for message in messages:
-                    print 'from = %s; to = %s; date = %s; text = %s; linkId = %s;' % (
-                        message['from'], message['to'], message['date'], message['text'], message['linKId'])
-                    lastReceivedId = message['id']
+            # For a specific queue, specify the queue name eg:
+            # queueName = "myQueueName"
+            #results = gateway.getNumQueuedCalls(phoneNumber, queueName)
 
-        except AfricasTalkingGatewayException as e:
-            print 'Encountered an error while fetching messages: %s' % str(e)
-
+            for result in queuedcalls:
+                print "phoneNumber: %s; queueName: %s; number of queued calls: %s \n" % (
+                    result['phoneNumber'], result['queueName'], result['numCalls'])
+        except AfricasTalkingGatewayException, e:
+            print 'Encountered an error while getting queued calls: %s' % str(e)
 
 if __name__ == '__main__':
-    SMS().fetch_sms()
+    VOICE().fetch_queued_calls()

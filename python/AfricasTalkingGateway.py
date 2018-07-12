@@ -234,8 +234,8 @@ class AfricasTalkingGateway:
         if self.responseCode == self.HTTP_RESPONSE_CREATED:
             decoded = json.loads(response)
             if decoded['token'] == 'None':
-                raise AfricasTalkingGatewayException(decoded['token'])
-            return decoded['description']
+                raise AfricasTalkingGatewayException(decoded['description'])
+            return decoded['token']
         raise AfricasTalkingGatewayException(response)
 
     #Payment Methods
