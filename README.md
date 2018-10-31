@@ -2,7 +2,7 @@
 
 A collection of Africa's Talking Gateway classes to help with developing on our APIs.
 
-**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns. Read this [transition guide](https://blog.africastalking.com/) to help with moving from the gateway classes to the SDKs.**
+**Please Note: These gateway classes are not under active development and will be deprecated soon. We advice you move to the [official SDKs](#official-sdks) for a richer set of features and improved development patterns.**
 
 ## Official SDKs
 1. [C#](https://github.com/AfricasTalkingLtd/africastalking.Net)
